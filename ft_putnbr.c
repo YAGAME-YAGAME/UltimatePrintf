@@ -6,18 +6,22 @@
 /*   By: aamohame <aamohame@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 10:52:52 by aamohame          #+#    #+#             */
-/*   Updated: 2023/12/27 11:43:05 by aamohame         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:26:26 by aamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-size_t	ft_numlen(int n)
+static size_t	ft_numlen(int n)
 {
 	size_t	len;
 
 	len = 0;
-	if (n < 0)
+	if (n == -2147483648)
+		return (11);
+	else if (n == 0)
+		return (1);
+	else if (n < 0)
 	{
 		len++;
 		n *= -1;

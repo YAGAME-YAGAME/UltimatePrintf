@@ -6,17 +6,19 @@
 /*   By: aamohame <aamohame@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:25:13 by aamohame          #+#    #+#             */
-/*   Updated: 2023/12/27 13:20:09 by aamohame         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:32:36 by aamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-size_t	ft_numlen(unsigned int n)
+static size_t	ft_numlen(unsigned int n)
 {
 	size_t	len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	while (n > 0)
 	{
 		n = n / 10;
